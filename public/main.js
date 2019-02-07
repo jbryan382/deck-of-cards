@@ -35,12 +35,16 @@ const shuffleDeck = () => {
 }
 
 const dealCard = event => {
-  for (let i = 51; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    let hand = deck.splice(j, 1)
-    document.querySelector('Hand').textContent = hand
-    document.querySelector('Hand').appendChild(hand)
-  }
+  let drawnCard = deck.splice(0, 1)
+  const _li = document.createElement('li')
+  _li.textContent = drawnCard
+  document.querySelector('ul').appendChild(_li)
+  // for (let i = 51; i >= 0; i--) {
+  //   const j = Math.floor(Math.random() * (i + 1))
+  //   let hand = deck.splice(j, 1)
+  //   document.querySelector('Hand').textContent = hand
+  //   document.querySelector('Hand').appendChild(hand)
+  // }
 }
 
 const main = () => {
